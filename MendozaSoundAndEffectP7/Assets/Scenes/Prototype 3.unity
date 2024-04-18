@@ -152,7 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9c3a72e6cae85f4ab950c0a3a9e2304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obstaclePrefab: {fileID: 3846337094903414737, guid: 3be2acee8fb7b1344b19e0ed73d91a28, type: 3}
+  obstaclePrefabs:
+  - {fileID: 1598373590280569944, guid: 7557ffad8db546f42b024352bc58cebf, type: 3}
+  - {fileID: 7154794276823564407, guid: 0722e69ab5160d7489c6672d0d2c03ef, type: 3}
+  - {fileID: 2269684334190000702, guid: 740455aa5e9887844aa0857918c3de82, type: 3}
 --- !u!4 &14857805
 Transform:
   m_ObjectHideFlags: 0
@@ -162,7 +165,7 @@ Transform:
   m_GameObject: {fileID: 14857803}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.506401, y: -11.095474, z: 1.6097765}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -931,6 +934,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2032687747
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2032687749}
+  - component: {fileID: 2032687748}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2032687748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032687747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36e54c4b2160a664ea86a5764762fd81, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  score: 0
+--- !u!4 &2032687749
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2032687747}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.0110154, y: 0.6204341, z: -0.035530567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &5823791313178304952
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -944,8 +992,20 @@ PrefabInstance:
       value: 3.6612747
       objectReference: {fileID: 0}
     - target: {fileID: 2215466665176138763, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
+      propertyPath: m_Size.y
+      value: 2.7810354
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215466665176138763, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
       propertyPath: m_Center.x
       value: -0.11102545
+      objectReference: {fileID: 0}
+    - target: {fileID: 2215466665176138763, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
+      propertyPath: m_Center.y
+      value: 1.4834976
+      objectReference: {fileID: 0}
+    - target: {fileID: 2431060878612614796, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
+      propertyPath: m_Constraints
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 4515743688633882453, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
       propertyPath: m_Name
@@ -997,7 +1057,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7104287072011269123, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
       propertyPath: jumpForce
-      value: 600
+      value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 7104287072011269123, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
       propertyPath: jumpSound
@@ -1007,6 +1067,14 @@ PrefabInstance:
       propertyPath: crashSound
       value: 
       objectReference: {fileID: 8300000, guid: 4bcde6de2166e41e284ec46d8a01fb90, type: 3}
+    - target: {fileID: 7104287072011269123, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
+      propertyPath: doubleJumpUsed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7104287072011269123, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
+      propertyPath: doubleJumpforce
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7104287072011269123, guid: e1d3015eaafa8c143a02d11f8a1c1f78, type: 3}
       propertyPath: explosionParticle
       value: 
@@ -1035,3 +1103,4 @@ SceneRoots:
   - {fileID: 835818921}
   - {fileID: 5823791313178304952}
   - {fileID: 14857805}
+  - {fileID: 2032687749}
